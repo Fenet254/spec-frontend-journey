@@ -1,47 +1,41 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="container">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <input
+      type="text"
+      v-model="name"
+      placeholder="Enter your name"
+    />
+
+    
+    <p v-if="name.trim().length > 0">
+      Hi there, {{ name }} 
+    </p>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script setup>
+import { ref } from "vue";
+
+const name = ref("");
+</script>
+
+<style>
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+input {
+  padding: 8px;
+  margin-top: 10px;
+  width: 250px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+p {
+  margin-top: 15px;
+  font-size: 40px;
+  color: rgb(224, 220, 228);
 }
 </style>
