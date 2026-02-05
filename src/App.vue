@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="container">
 
 
@@ -39,3 +39,33 @@ p {
   color: rgb(224, 220, 228);
 }
 </style>
+-->
+<template>
+  <div class="page">
+
+
+    <div class="card-list">
+      <UserCard name="abebe" role=" role1" />
+      <UserCard name="kebede" role="role2" />
+      <UserCard name="chaltu" role="role3" />
+    </div>
+  </div>
+</template>
+
+<script setup>
+import UserCard from "./components/UserCard.vue"
+</script>
+
+<style scoped>
+.page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.card-list {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+</style>
+
